@@ -1,4 +1,4 @@
-# trial-verdaccio
+# infra-blocks-verdaccio
 
 [Vercaccio 官方文档](https://verdaccio.org/docs/docker)
 
@@ -11,7 +11,7 @@ curl -o conf/config.yaml https://raw.githubusercontent.com/verdaccio/verdaccio/5
 # 配置路径并启动 Docker
 
 ```shell
-V_PATH=~/trial-verdaccio; docker run --name verdaccio --restart always -d \
+V_PATH=~/infra-blocks-verdaccio; docker run --name verdaccio --restart always -d \
   -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \

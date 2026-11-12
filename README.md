@@ -1,5 +1,8 @@
 # infra-blocks-verdaccio
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Repository size](https://img.shields.io/github/repo-size/kamaslau/infra-blocks-verdaccio?color=56BEB8)
+
 [Vercaccio 官方文档](https://verdaccio.org/docs/docker)
 
 # 下载默认配置文件到 conf 目录

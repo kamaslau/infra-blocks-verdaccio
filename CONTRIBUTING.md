@@ -2,7 +2,7 @@
 
 This repository is one unit of [infrastructure blocks](https://github.com/kamaslau/infra-blocks): a private npm registry, run from a single container.
 
-Default port: 4873. It comes from `.env`; nothing here hardcodes it.
+Default port: 4873. This unit is a single `docker run`, so the port is the literal `-p 4873:4873` in the README — change it there.
 
 ## The shape a change has to keep
 
@@ -14,7 +14,7 @@ The test for any change: could someone who has never seen this repository run it
 
 ## Pull requests
 
-- **Ports come from `.env`.** If you add a variable, add it to `.env.example` (or `.env.sample`) with a working default, and mention it under Service URL.
+- **Ports are configuration, not constants.** There is no `.env` here; the flag in the documented `docker run` is the only place a port may change.
 - **The README is English.** Chinese belongs only under *Notes for deployments in China*. That section exists because it is the part a foreign HQ cannot supply; mixed into the body, it stops being findable.
 - **`Verify` has to keep proving something.** Any behaviour change updates the command in that section. A `Verify` that returns success while the service is down is worse than no `Verify`.
 - **Credentials stay marked local-only.** If a change makes the default credential reachable from outside the host, say so in the README in the same commit.

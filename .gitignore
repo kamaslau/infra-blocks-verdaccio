@@ -1,0 +1,4 @@
+# Verdaccio storage and plugins live in named volumes; only the config is tracked.
+.env
+storage/
+plugins/

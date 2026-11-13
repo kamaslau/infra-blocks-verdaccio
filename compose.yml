@@ -1,0 +1,25 @@
+name: trial-verdaccio
+
+volumes:
+  verdaccio_storage:
+  verdaccio_plugins:
+
+services:
+  verdaccio:
+    container_name: verdaccio
+    image: verdaccio/verdaccio:6
+    restart: unless-stopped
+    ports:
+      - ${PORT-4873}:4873
+    environment:
+      - VERDACCIO_PORT=4873
+    volumes:
+      - ./conf:/verdaccio/conf:ro
+      - verdaccio_storage:/verdaccio/storage
+      - verdaccio_plugins:/verdaccio/plugins
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:4873/-/ping || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
